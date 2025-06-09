@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Оформлення замовлення | FootballStyle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    body {
+      background-color: #0e0e0e;
+      color: white;
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #c40000;
+      margin-bottom: 30px;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #1a1a1a;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #000;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      background-color: #2a2a2a;
+      border: 1px solid #444;
+      color: white;
+      border-radius: 5px;
+      margin-top: 5px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      font-size: 1em;
+      background-color: #c40000;
+      border: none;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #a80000;
+    }
+
+    .cart-items {
+      margin-top: 15px;
+      font-style: italic;
+      color: #ccc;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Оформлення замовлення</h1>
+
+  <form id="checkoutForm">
+    <label for="name">Ім'я:</label>
+    <input type="text" id="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+
+    <label for="address">Адреса доставки:</label>
+    <textarea id="address" rows="3" required></textarea>
+
+    <div class="cart-items" id="cartItems">Товари: (завантаження...)</div>
+
+    <button type="submit">Підтвердити замовлення</button>
+  </form>
+
+  <script>
+    // Завантажити товари з localStorage
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartDisplay = document.getElementById('cartItems');
+
+    if (cartItems.length === 0) {
+      cartDisplay.textContent = 'Корзина порожня.';
+    } else {
+      cartDisplay.innerHTML = '<strong>Товари:</strong><br>' + cartItems.map(p => `• ${p.title} (${p.price}₴)`).join('<br>');
+    }
+
+    document.getElementById('checkoutForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      if (cartItems.length === 0) {
+        alert('Корзина порожня!');
+        return;
+      }
+
+      const order = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        address: document.getElementById('address').value,
+        items: cartItems.map(p => p.title)
+      };
+
+      const res = await fetch('http://127.0.0.1:5000/api/orders', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(order)
+      });
+
+      if (res.ok) {
+        alert('✅ Замовлення успішно оформлено!');
+        localStorage.removeItem('cart');
+        window.location.href = '/'; // або інша сторінка
+      } else {
+        alert('❌ Помилка при оформленні замовлення');
+      }
+    });
+  </script>
+<script src="assets/js/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Кошик | FootballStyle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    body {
+      background-color: #0e0e0e;
+      color: white;
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #c40000;
+      margin-bottom: 30px;
+    }
+
+    .cart-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #1a1a1a;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #000;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #333;
+      padding: 10px 0;
+    }
+
+    .cart-item:last-child {
+      border-bottom: none;
+    }
+
+    .cart-item span {
+      flex: 1;
+    }
+
+    .remove-btn {
+      background-color: #c40000;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .remove-btn:hover {
+      background-color: #a80000;
+    }
+
+    .total {
+      margin-top: 20px;
+      font-weight: bold;
+      text-align: right;
+    }
+
+    .checkout-btn {
+      margin-top: 30px;
+      width: 100%;
+      padding: 15px;
+      background-color: #c40000;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .checkout-btn:hover {
+      background-color: #a80000;
+    }
+
+    .empty {
+      text-align: center;
+      font-style: italic;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Кошик</h1>
+
+  <div class="cart-container" id="cartContainer">Завантаження...</div>
+
+  <script>
+    const cartContainer = document.getElementById('cartContainer');
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    function renderCart() {
+      cartContainer.innerHTML = '';
+
+      if (cart.length === 0) {
+        cartContainer.innerHTML = '<p class="empty">Кошик порожній.</p>';
+        return;
+      }
+
+      cart.forEach((item, index) => {
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+
+        div.innerHTML = `
+          <span>${item.title}</span>
+          <span>${item.price} ₴</span>
+          <button class="remove-btn" onclick="removeItem(${index})">Видалити</button>
+        `;
+
+        cartContainer.appendChild(div);
+      });
+
+      const total = cart.reduce((sum, item) => sum + item.price, 0);
+
+      const totalEl = document.createElement('div');
+      totalEl.className = 'total';
+      totalEl.textContent = `Загалом: ${total} ₴`;
+      cartContainer.appendChild(totalEl);
+
+      const checkoutBtn = document.createElement('button');
+      checkoutBtn.className = 'checkout-btn';
+      checkoutBtn.textContent = 'Оформити замовлення';
+      checkoutBtn.onclick = () => window.location.href = 'checkout.html';
+      cartContainer.appendChild(checkoutBtn);
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart();
+    }
+
+    renderCart();
+  </script>
+<script src="assets/js/cart.js"></script>
+</body>
+</html>

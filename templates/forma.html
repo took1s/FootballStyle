@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FootballStyle</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body data-category="forma">
+  <div class="container">
+      <header>
+        <div class="logo">
+          <span class="small">ОНЛАЙН МАГАЗИН</span>
+          <span class="main">FootballStyle</span>
+          <span class="small">ОНЛАЙН МАГАЗИН</span>
+
+          <div class="whatsapp">
+            <img src="{{ url_for('static', filename='assets/icons/icons8-whatsapp-50.png') }}" alt="whatsapp" />
+            <span class="phone">+380 97 968 3529</span>
+          </div>
+        </div>
+
+        <nav class="header-link">
+          <a href="index.html">ГОЛОВНА</a>
+          <a href="categories.html">КАТАЛОГ КАТЕГОРІЙ</a>
+          <a href="about.html">ПРО НАС</a>
+          <a href="delivery.html">ДОСТАВКА І ОПЛАТА</a>
+          <a href="#contacts">КОНТАКТИ</a>
+        </nav>
+
+        <div class="header-icons">
+          <svg  class="icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2c-3.2 0-9.5 1.6-9.5 4.7v1.1h19v-1.1C21.5 15.6 15.2 14 12 14z"/>
+          </svg>
+        
+          <!-- basket icon -->
+          <a href="cart.html">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M7 4v2H2v2h1l3.6 7.59-1.35 2.44c-.16.29-.25.63-.25.97 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03L20.9 8H5.21l-.94-2H7z"/>
+            </svg>
+          </a>
+          <!-- search icon -->
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 5L20.49 19l-5-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+          </svg>
+        </div>
+      </header>
+    </div>
+  <section class="boots-wrapper">
+    <div class="container" style="display: flex; gap: 40px; padding-top: 40px;">
+      <!-- Filters -->
+      <div class="filters">
+        <div class="filter-group">
+          <div class="filter-header">Наявність <span class="toggle">−</span></div>
+          <div class="filter-content">
+            <label>
+              <input type="radio" name="availability" value="all" checked />
+              Всі товари
+            </label>
+            <label>
+              <input type="radio" name="availability" value="in-stock" />
+              В наявності
+            </label>
+            <label>
+              <input type="radio" name="availability" value="out-of-stock" />
+              Немає в наявності
+            </label>
+          </div>
+        </div>
+  
+        <div class="filter-group">
+          <div class="filter-header">Бренд <span class="toggle">−</span></div>
+          <div class="filter-content brands">
+            <button class="brand-filter" data-brand="nike">Nike</button>
+            <button class="brand-filter" data-brand="adidas">Adidas</button>
+            <button class="brand-filter" data-brand="puma">Puma</button>
+          </div>
+        </div>
+  
+        <!-- ЦІНА -->
+        <div class="filter-group">
+          <div class="filter-header">Ціна <span class="toggle">−</span></div>
+          <div class="filter-content">
+            <div class="price-inputs">
+              <input type="number" id="min-price" placeholder="від" />
+              <input type="number" id="max-price" placeholder="до" />
+            </div>
+            
+          </div>
+        </div>
+        
+        <div class="filter-group">
+          <div class="filter-header">Розмір INT <span class="toggle">−</span></div>
+          <div class="filter-content size-filters">
+            <button data-size="XS">XS</button>
+            <button data-size="S">S</button>
+            <button data-size="M">M</button>
+            <button data-size="L">L</button>
+            <button data-size="XL">XL</button>
+            <button data-size="2XL">2XL</button>
+            <button data-size="3XL">3XL</button>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-header">Тип товару <span class="toggle">−</span></div>
+          <div class="filter-content type-filters">
+            <label><input type="radio" name="type" value="game-shirts" /> Футболки</label>
+            <label><input type="radio" name="type" value="game-shorts" /> Шорти</label>
+            <label><input type="radio" name="type" value="socks" /> Гетри</label>
+          </div>
+        </div>
+      
+        
+      </div>
+ 
+      <!-- Products -->
+      <div class="boot-products">
+        <div class="sorting">
+          <label>Сортувати: 
+            <select id="sortSelect">
+              <option value="popularity">За популярністю</option>
+              <option value="price-asc">За ціною: зростання</option>
+              <option value="price-desc">За ціною: спадання</option>
+            </select>
+          </label>
+        </div>
+        <div class="boot-grid">
+          <!-- Пример товара -->
+          
+
+        </div>
+        <div id="pagination" class="pagination"></div>
+      </div>
+    </div>
+    
+  </section>
+  
+
+
+  <div class="rot-line"></div>
+  {% include 'footer.html' %}
+
+
+ 
+  
+
+
+
+
+
+
+<button id="toTopBtn" title="Вгору">↑</button>
+<script>
+  document.querySelectorAll('.brand-button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('active');
+    });
+  });
+
+  // Показать все размеры
+  const showAllBtn = document.getElementById('showAllSizes');
+  showAllBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const container = document.getElementById('size-container');
+
+    // Удаляем кнопку
+    showAllBtn.remove();
+
+    // Добавляем размеры
+    for (let size = 40; size <= 47; size++) {
+      const label = document.createElement('label');
+      label.innerHTML = `<input type="radio" name="size" /> ${size} <span class="count">(5)</span>`;
+      container.appendChild(label);
+    }
+  });
+</script>
+
+
+<script>
+ 
+
+  // Показати всі розміри
+  document.querySelector('.show-all-sizes').addEventListener('click', () => {
+    document.querySelectorAll('.more-sizes').forEach(el => el.classList.remove('hidden'));
+    document.querySelector('.show-all-sizes').style.display = 'none';
+  });
+
+  // Виділення активного бренду
+  document.querySelectorAll('.brands button').forEach(button => {
+    button.addEventListener('click', () => {
+      button.classList.toggle('active');
+    });
+  });
+</script>
+<script>
+  // Показывать кнопку при скролле вниз
+  window.onscroll = function() {
+    const btn = document.getElementById("toTopBtn");
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+
+  // При клике — прокрутка вверх
+  document.getElementById("toTopBtn").onclick = function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+</script>
+<script src="{{ url_for('static', filename='scripts/cart.js') }}"></script>
+<script src="/static/scripts/universal-filter.js"></script>
+</body>
+</html>

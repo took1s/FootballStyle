@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FootballStyle</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    {% include 'header.html' %}
+    
+  </div>
+  <main class="about-main">
+    
+    <section class="categories-section">
+      <h2>КАТАЛОГ КАТЕГОРІЙ</h2>
+      <div class="categories-grid">
+    
+        <a href="boots.html" class="category-item">
+          <img src="{{ url_for('static', filename='assets/categories/boots.png') }}" alt="Бутси">
+          <span>ФУТБОЛЬНЕ ВЗУТТЯ</span>
+        </a>
+    
+        <a href="forma.html" class="category-item">
+          <img src="{{ url_for('static', filename='assets/categories/trico.png') }}" alt="Форма">
+          <span>ФУТБОЛЬНА ФОРМА</span>
+        </a>
+    
+        <a href="balls.html" class="category-item">
+          <img src="{{ url_for('static', filename='assets/categories/ball.png') }}" alt="М’ячі">
+          <span>М’ЯЧІ</span>
+        </a>
+    
+        <a href="accessories.html" class="category-item">
+          <img src="{{ url_for('static', filename='assets/categories/accsesuare.png') }}" alt="Аксесуари">
+          <span>АКСЕСУАРИ</span>
+        </a>
+    
+        <a href="goalkeeper.html" class="category-item">
+          <img src="{{ url_for('static', filename='assets/categories/png.png') }}" alt="Воротарям">
+          <span>ВОРОТАРЯМ</span>
+        </a>
+    
+        <a href="training.html" class="category-item">
+          <img src="{{ url_for('static', filename='assets/categories/train-clomothe.png') }}" alt="Тренувальний одяг">
+          <span>ТРЕНУВАЛЬНИЙ ОДЯГ</span>
+        </a>
+    
+        <a href="equipment.html" class="category-item">
+          <img src="{{ url_for('static', filename='assets/categories/pro_training_football.png') }}" alt="Інвентар">
+          <span>ФУТБОЛЬНИЙ ІНВЕНТАР</span>
+        </a>
+    
+        
+    
+      </div>
+    </section>
+    
+  </main>
+  <div class="rot-line"></div>
+  {% include 'footer.html' %}
+
+  <!-- Скрипт для верхнего слайдера -->
+ 
+<button id="toTopBtn" title="Вгору">↑</button>
+
+<script>
+  // Показывать кнопку при скролле вниз
+  window.onscroll = function() {
+    const btn = document.getElementById("toTopBtn");
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+
+  // При клике — прокрутка вверх
+  document.getElementById("toTopBtn").onclick = function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+</script>
+<script src="assets/js/cart.js"></script>
+</body>
+</html>

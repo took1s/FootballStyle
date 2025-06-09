@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FootballStyle</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+      <header>
+        <div class="logo">
+          <span class="small">ОНЛАЙН МАГАЗИН</span>
+          <span class="main">FootballStyle</span>
+          <span class="small">ОНЛАЙН МАГАЗИН</span>
+
+          <div class="whatsapp">
+            <img src="{{ url_for('static', filename='assets/icons/icons8-whatsapp-50.png') }}" alt="whatsapp" />
+            <span class="phone">+380 97 968 3529</span>
+          </div>
+        </div>
+
+        <nav class="header-link">
+          <a href="index.html">ГОЛОВНА</a>
+          <a href="categories.html">КАТАЛОГ КАТЕГОРІЙ</a>
+          <a href="about.html">ПРО НАС</a>
+          <a href="delivery.html">ДОСТАВКА І ОПЛАТА</a>
+          <a href="#contacts">КОНТАКТИ</a>
+        </nav>
+
+        <div class="header-icons">
+          <svg  class="icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2c-3.2 0-9.5 1.6-9.5 4.7v1.1h19v-1.1C21.5 15.6 15.2 14 12 14z"/>
+          </svg>
+        
+          <!-- basket icon -->
+          <a href="cart.html">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M7 4v2H2v2h1l3.6 7.59-1.35 2.44c-.16.29-.25.63-.25.97 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03L20.9 8H5.21l-.94-2H7z"/>
+            </svg>
+          </a>
+          <!-- search icon -->
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 5L20.49 19l-5-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+          </svg>
+        </div>
+      </header>
+    </div>
+  <main class="about-main">
+    
+    <div class="titel-delivery-payment">ДОСТАВКА І ОПЛАТА</div>
+
+    <div class="delivery-grid">
+
+      <!-- Доставка -->
+      <div class="delivery-card">
+        <h2>ДОСТАВКА</h2>
+        <img src="{{ url_for('static', filename='assets/images/truck.png') }}" alt="delivery" />
+        <p>Ми доставляємо по всій Україні:</p>
+        <ul>
+          <li>Нова Пошта — 1–3 дні</li>
+          <li>Укрпошта — 2–5 днів</li>
+          <li>Самовивіз у Дніпрі — за домовленістю</li>
+        </ul>
+        <p>Замовлення обробляється протягом 24 годин.</p>
+      </div>
+
+      <!-- Оплата -->
+      <div class="delivery-card">
+        <h2>ОПЛАТА</h2>
+        <img src="{{ url_for('static', filename='assets/images/payment.png') }}" alt="payment" />
+        <ul>
+          <li>Онлайн-оплата карткою (Visa/Mastercard)</li>
+          <li>Оплата при отриманні (накладений платіж)</li>
+          <li>Google Pay / Apple Pay (на сайті)</li>
+        </ul>
+        <p class="small-note">При замовленні від 2000 грн — доставка безкоштовна!</p>
+      </div>
+
+      <!-- Повернення -->
+      <div class="delivery-card">
+        <h2>УМОВИ ПОВЕРНЕННЯ</h2>
+        <img src="{{ url_for('static', filename='assets/images/return.png') }}" alt="return" />
+        <p>Повернення можливе протягом 14 днів за умови збереження товарного вигляду.</p>
+        <p>Вартість доставки при поверненні оплачує покупець (крім випадків браку).</p>
+      </div>
+
+    </div>
+    
+  </main>
+  <div class="rot-line"></div>
+  {% include 'footer.html' %}
+
+  <!-- Скрипт для верхнего слайдера -->
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    let index = 0;
+
+    function showSlide(i) {
+      slides.forEach((slide, idx) => {
+        slide.classList.remove('active');
+        const content = slide.querySelector('.slide-content');
+        if (content) content.classList.remove('animate');
+      });
+      dots.forEach(dot => dot.classList.remove('active'));
+
+      slides[i].classList.add('active');
+      dots[i].classList.add('active');
+
+      const activeContent = slides[i].querySelector('.slide-content');
+      if (activeContent) {
+        void activeContent.offsetWidth;
+        activeContent.classList.add('animate');
+      }
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        index = i;
+        showSlide(index);
+      });
+    });
+
+    setInterval(() => {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    }, 10000);
+  </script>
+  
+
+  <!-- Swiper для новинок -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script>
+const productSwiper = new Swiper('.swiper-container', {
+  loop: true,
+  slidesPerView: 5,
+  slidesPerGroup: 5,
+  spaceBetween: 0,
+  speed: 500,
+  autoplay: {
+    delay: 10000, // каждые 10 секунд
+    disableOnInteraction: false, // не отключать после кликов
+  },
+  pagination: {
+    el: '.novinki-pagination',
+    clickable: true,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+    },
+    768: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+    },
+    1024: {
+      slidesPerView: 5,
+      slidesPerGroup: 5,
+    }
+  }
+});
+  </script>
+
+
+<script>
+const leadersSwiper = new Swiper('.leaders-swiper', {
+  loop: true,
+  slidesPerView: 5,
+  slidesPerGroup: 5,
+  spaceBetween: 30,
+  speed: 1500,
+  autoplay: {
+    delay: 10000,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: '.leaders-pagination',
+    clickable: true,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+    },
+    768: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+    },
+    1024: {
+      slidesPerView: 5,
+      slidesPerGroup: 5,
+    }
+  }
+});
+</script>
+<button id="toTopBtn" title="Вгору">↑</button>
+
+<script>
+  // Показывать кнопку при скролле вниз
+  window.onscroll = function() {
+    const btn = document.getElementById("toTopBtn");
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+
+  // При клике — прокрутка вверх
+  document.getElementById("toTopBtn").onclick = function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+</script>
+<script src="assets/js/cart.js"></script>
+</body>
+</html>

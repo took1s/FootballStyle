@@ -1,0 +1,92 @@
+[
+  {
+    "brand": "nike",
+    "id": 1,
+    "image_url": "assets/images/comrades/boots/NIKE/NIKE AIR ZOOM MERCURIAL/VAPOR/16/Purple AgateNeon/ELITE/FG/3d87ee60a088.jpg",
+    "level": "\u0435\u043b\u0456\u0442\u043d\u0456",
+    "name": "Nike Air Zoom Mercurial Vapor 16 Elite FG United",
+    "price": 11500,
+    "stock": true,
+    "surface": "fg"
+  },
+  {
+    "brand": "adidas",
+    "id": 2,
+    "image_url": "assets/images/comrades/boots/adidas/F50/Advancement - Wei\u00dfRotLucid Blue/FG/Elite/1fd1aabf2594.jpg",
+    "level": "e\u043b\u0456\u0442\u043d\u0456",
+    "name": "adidas F50 Elite FG Advancement - Wei\u00df/Rot/Lucid Blue",
+    "price": 11000,
+    "stock": true,
+    "surface": "fg"
+  },
+  {
+    "brand": "nike",
+    "id": 3,
+    "image_url": "assets/images/comrades/boots/NIKE/NIKE PHANTOM/GX 2/LUNA/UNITED - PURPLE AGATE NEON/ELITE/FG/e911ba043bf1.jpg",
+    "level": "\u0435\u043b\u0456\u0442\u043d\u0456",
+    "name": "Nike Phantom Luna II Elite FG United - Purple Agate/Neon",
+    "price": 11500,
+    "stock": true,
+    "surface": "fg"
+  },
+  {
+    "brand": "nike",
+    "id": 4,
+    "image_url": "assets/images/comrades/boots/NIKE/NIKE PHANTOM/GX 2/NORMAL/UNITED - PURPLE AGATE NEON/ELITE/FG/07f14c9d4b01.jpg",
+    "level": "\u0435\u043b\u0456\u0442\u043d\u0456",
+    "name": "Nike Phantom GX II Elite FG United - Purple Agate/Neon",
+    "price": 11500,
+    "stock": true,
+    "surface": "fg"
+  },
+  {
+    "brand": "nike",
+    "id": 5,
+    "image_url": "assets/images/comrades/boots/NIKE/NIKE AIR ZOOM MERCURIAL/VAPOR/16/Chromatic - Wei\u00dfMulticolor/FG/ELITE/09c52f41d00c.jpg",
+    "level": "\u0435\u043b\u0456\u0442\u043d\u0456",
+    "name": "Nike Air Zoom Mercurial Vapor 16 Elite FG Chromatic - Wei\u00df/Multicolor",
+    "price": 12000,
+    "stock": true,
+    "surface": "fg"
+  },
+  {
+    "brand": "nike",
+    "id": 6,
+    "image_url": "assets/images/comrades/boots/NIKE/NIKE AIR ZOOM MERCURIAL/VAPOR/16/Mbapp\u00e9 Personal Edition - LilaWei\u00df/PRO/FG/c31a98d62241.jpg",
+    "level": "\u043f\u0440\u043e\u0444\u0435\u0441\u0456\u0439\u043d\u0456",
+    "name": "Nike Air Zoom Mercurial Vapor 16 Pro FG Mbapp\u00e9 Personal Edition - Lila/Wei\u00df",
+    "price": 7999,
+    "stock": true,
+    "surface": "fg"
+  },
+  {
+    "brand": "puma",
+    "id": 7,
+    "image_url": "assets/images/comrades/boots/Puma/Ultra/5/Formula - LapislazuliWei\u00dfSunset Glow/FG_AG/MATCH/84ad09b76050.jpg",
+    "level": "\u043b\u044e\u0431\u0438\u0442\u0435\u043b\u044c\u0441\u043a\u0456",
+    "name": "PUMA Ultra 5 Match + FG/AG Formula - Lapislazuli/Wei\u00df/Sunset Glow",
+    "price": 3999,
+    "stock": true,
+    "surface": "ag"
+  },
+  {
+    "brand": "puma",
+    "id": 8,
+    "image_url": "assets/images/comrades/boots/Puma/Future/8/Audacity - GelbSchwarzGelb/Ultimate/FG/1.jpg",
+    "level": "\u0435\u043b\u0456\u0442\u043d\u0456",
+    "name": "PUMA Future 8 Ultimate FG Audacity - Gelb/Schwarz/Gelb",
+    "price": 11499,
+    "stock": true,
+    "surface": "fg"
+  },
+  {
+    "brand": "puma",
+    "id": 9,
+    "image_url": "assets/images/comrades/boots/Puma/Future/8/Unlimited - SchwarzWei\u00dfRot/Ultimate/MG/1.jpg",
+    "level": "\u0435\u043b\u0456\u0442\u043d\u0456",
+    "name": "PUMA Future 8 Ultimate MG Unlimited - Schwarz/Wei\u00df/Rot",
+    "price": 11000,
+    "stock": true,
+    "surface": "mg"
+  }
+]
