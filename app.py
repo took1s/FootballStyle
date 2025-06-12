@@ -6,6 +6,7 @@ import os
 from backend.models import Order
 from datetime import datetime
 import json
+from backend.models import CartItem
 
 app = Flask(__name__)
 CORS(app)
@@ -190,10 +191,21 @@ def get_top_products():
         })
     return jsonify(result)
 
+@app.route('/api/cart', methods=['POST'])
+def add_to_cart():
+    data = request.json
+    new_item = CartItem(
+        user_id=data.get('user_id', 1),
+        product_id=data.get('product_id'),
+        quantity=data.get('quantity', 1)
+    )
+    db.session.add(new_item)
+    db.session.commit()
+    return jsonify({'message': 'Товар додано в кошик'}), 201
+
 # ====== Инициализация и запуск ======
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-    import os
-port = int(os.environ.get("PORT", 5000))
-app.run(host="0.0.0.0", port=port)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)

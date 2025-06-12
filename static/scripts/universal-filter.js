@@ -9,8 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const surfaceButtons = document.querySelectorAll('.surface-filters button');
   const sizeButtons = document.querySelectorAll('.size-filters button');
   const typeRadios = document.querySelectorAll('input[name="type"]');
+  const sizeRadios = document.querySelectorAll('input[name="size"]');
   const sortSelect = document.getElementById('sortSelect');
   const paginationContainer = document.getElementById('pagination');
+
+  
 
   const page = window.location.pathname.split('/').pop();
   const category = page.replace('.html', '');
@@ -157,6 +160,17 @@ document.addEventListener('DOMContentLoaded', () => {
   typeRadios.forEach(radio => {
     radio.addEventListener('change', () => {
       selectedType = radio.checked ? radio.value : null;
+      renderCards(1);
+    });
+  });
+
+  sizeRadios.forEach(radio => {
+    radio.addEventListener('change', () => {
+      selectedSizes = [];
+      const selected = document.querySelector('input[name="size"]:checked');
+      if (selected) {
+        selectedSizes = [selected.parentElement.textContent.trim().toLowerCase()];
+      }
       renderCards(1);
     });
   });
